@@ -26,7 +26,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    'plugins/axios.js'
+    'plugins/axios.js',
+    'plugins/my-inject'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -57,7 +58,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/sass/variables.scss'],
     treeShake: true,
-    themes: {
+    theme: {
       light: {
         primary: '4080BE',
         info: '4FC1E9',

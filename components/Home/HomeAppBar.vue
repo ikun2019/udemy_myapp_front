@@ -24,11 +24,11 @@
         :class="{ 'hidden-sm-and-down': (menu.title === 'about') }"
         @click="$vuetify.goTo(`#${menu.title}`)"
       >
-        {{ $t(`menus.${menu.title}`) }}
+        {{ $my.pageTitle(`menus.${menu.title}`) }}
       </v-btn>
     </v-toolbar-items>
-    <app-signup-button />
-    <app-login-button />
+    <before-login-app-bar-signup-button />
+    <before-login-app-bar-login-button />
     <v-menu
       bottom
       nudge-left="110"
@@ -53,7 +53,7 @@
           @click="$vuetify.goTo(`#${menu.title}`)"
         >
           <v-list-item-title>
-            {{ $t(`menus.${menu.title}`) }}
+            {{ $my.pageTitle(`menus.${menu.title}`) }}
           </v-list-item-title>
         </v-list-item>
       </v-list>

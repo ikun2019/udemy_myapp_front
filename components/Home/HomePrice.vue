@@ -13,7 +13,7 @@
           <v-radio
             v-for="(pay, i) in payments"
             :key="`pay-${i}`"
-            :label="$t(`menus.payments.${pay.label}`)"
+            :label="$my.pageTitle(`menus.payments.${pay.label}`)"
             :value="pay.label"
             :color="pay.color"
           />
