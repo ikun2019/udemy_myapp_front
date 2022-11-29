@@ -16,6 +16,6 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "no-tabs": 0
+    'no-tabs': 0
   }
 }
