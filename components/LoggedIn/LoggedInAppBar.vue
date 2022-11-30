@@ -14,14 +14,24 @@
     >
       <app-logo />
     </nuxt-link>
-    <app-title />
+
+    <app-title
+      :class="{ 'hidden-mobile-and-down': isNotHomePath }"
+    />
+
+    <!-- ページタイトル -->
+    <logged-in-app-bar-breadcrumbs
+      v-if="isNotHomePath"
+    />
     <v-spacer />
     <logged-in-app-bar-account-menu />
   </v-app-bar>
 </template>
 
 <script>
+import LoggedInAppBarBreadcrumbs from './LoggedInAppBarBreadcrumbs.vue'
 export default {
+  components: { LoggedInAppBarBreadcrumbs },
   props: {
     clippedLeft: {
       type: Boolean,
@@ -31,6 +41,11 @@ export default {
   data ({ $store }) {
     return {
       homePath: $store.state.loggedIn.homePath
+    }
+  },
+  computed: {
+    isNotHomePath () {
+      return this.$route.name !== this.homePath.name
     }
   }
 }
